@@ -37,7 +37,8 @@ export interface FriendlyForce {
   // Status
   status: UnitStatus
   personnel_count?: number
-  equipment?: Record<string, any>
+  equipment?: Record<string, any> | string[]
+  mission?: string
 
   // Metadata
   last_contact: string
@@ -60,6 +61,7 @@ export interface FriendlyForceCreate {
   status?: UnitStatus
   personnel_count?: number
   equipment?: Record<string, any>
+  mission?: string
 }
 
 export interface FriendlyForceUpdate {
@@ -96,6 +98,7 @@ export interface BlueonBlueCheck {
   target_latitude: number
   target_longitude: number
   radius?: number
+  radius_meters?: number
 }
 
 export interface BlueonBlueResponse {

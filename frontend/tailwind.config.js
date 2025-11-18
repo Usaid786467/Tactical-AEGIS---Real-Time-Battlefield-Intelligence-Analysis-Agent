@@ -16,6 +16,9 @@ export default {
           hover: '#1e293b',
           text: '#e5e7eb',
           muted: '#9ca3af',
+          primary: '#22c55e',
+          secondary: '#f59e0b',
+          accent: '#3b82f6',
         },
         threat: {
           low: '#10b981',
@@ -28,11 +31,6 @@ export default {
           amber: '#f59e0b',
           red: '#ef4444',
           black: '#374151',
-        },
-        tactical: {
-          primary: '#22c55e',
-          secondary: '#f59e0b',
-          accent: '#3b82f6',
         },
       },
       fontFamily: {

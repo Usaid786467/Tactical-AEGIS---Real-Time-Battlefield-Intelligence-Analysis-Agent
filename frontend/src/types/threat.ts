@@ -34,6 +34,7 @@ export interface Threat {
   confidence: number
   latitude: number
   longitude: number
+  altitude?: number
   grid_reference?: string
   description?: string
   source: ThreatSource
@@ -74,7 +75,8 @@ export interface ThreatAnalysisRequest {
   audio_data?: string
   latitude?: number
   longitude?: number
-  source: ThreatSource
+  location?: { latitude: number; longitude: number }
+  source: ThreatSource | string
 }
 
 export interface PredictedThreat {

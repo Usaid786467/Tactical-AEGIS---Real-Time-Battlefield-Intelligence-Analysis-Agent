@@ -43,13 +43,17 @@ export interface Sitrep {
   mission?: string
   execution?: string
   admin_logistics?: string
+  logistics?: string // Alias for admin_logistics
   command_signal?: string
+  command?: string // Alias for command_signal
+  summary?: string // AI-generated summary
 
   // Extracted data
   entities?: Entity[]
   source: string
   audio_transcript?: string
   metadata?: Record<string, any>
+  recommendations?: string[] // AI recommendations
 
   priority: SitrepPriority
   classification: SitrepClassification
@@ -102,7 +106,12 @@ export interface VoiceDebriefingResponse {
 }
 
 export interface SitrepGenerationRequest {
-  text_input: string
+  text_input?: string
+  time_range_hours?: number
+  priority?: SitrepPriority
+  source?: string
+  include_threats?: boolean
+  include_units?: boolean
   include_entities?: boolean
   auto_classify?: boolean
 }
