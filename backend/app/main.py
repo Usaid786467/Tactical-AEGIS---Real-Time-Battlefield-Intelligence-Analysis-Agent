@@ -110,13 +110,13 @@ async def general_exception_handler(request, exc):
 
 
 # Import and include routers
-# These will be added as we create them
-# from app.api.routes import data_fusion, threat_analysis, sitrep, tracking, websocket
-# app.include_router(data_fusion.router, prefix="/api/data-fusion", tags=["Data Fusion"])
-# app.include_router(threat_analysis.router, prefix="/api/threats", tags=["Threat Analysis"])
-# app.include_router(sitrep.router, prefix="/api/sitrep", tags=["SITREP"])
-# app.include_router(tracking.router, prefix="/api/tracking", tags=["Tracking"])
-# app.include_router(websocket.router, prefix="/ws", tags=["WebSocket"])
+from app.api.routes import data_fusion, threat_analysis, sitrep, tracking, websocket
+
+app.include_router(threat_analysis.router, prefix="/api/threats", tags=["Threat Analysis"])
+app.include_router(sitrep.router, prefix="/api/sitrep", tags=["SITREP"])
+app.include_router(tracking.router, prefix="/api/tracking", tags=["Tracking"])
+app.include_router(data_fusion.router, prefix="/api/fusion", tags=["Data Fusion"])
+app.include_router(websocket.router, tags=["WebSocket"])
 
 
 if __name__ == "__main__":
